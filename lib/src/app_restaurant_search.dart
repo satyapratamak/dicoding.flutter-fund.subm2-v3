@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_search_app_v1/src/view/v_search_filters.dart';
 
 import 'package:restaurant_search_app_v1/src/view/v_search_page.dart';
 
@@ -17,7 +16,6 @@ class RestaurantSearchApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => SearchPage(title: 'Restaurant App'),
-        'filters': (context) => SearchFilters(),
       },
     );
   }

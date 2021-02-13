@@ -3,10 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_search_app_v1/src/api.dart';
-import 'package:restaurant_search_app_v1/src/app_state.dart';
+
 import 'package:restaurant_search_app_v1/src/model/mod_restaurant.dart';
 
-import 'package:restaurant_search_app_v1/src/view/v_search_filters.dart';
 import 'package:restaurant_search_app_v1/src/view/v_search_form.dart';
 import 'package:restaurant_search_app_v1/src/view/wid_restaurant_item.dart';
 import 'package:restaurant_search_app_v1/style.dart';
@@ -26,7 +25,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     final api = Provider.of<DicodingAPI>(context);
-    final state = Provider.of<AppState>(context);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -37,21 +36,6 @@ class _SearchPageState extends State<SearchPage> {
           ),
         ),
         backgroundColor: color_tart_orange,
-        actions: [
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, 'filters');
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 15,
-              ),
-              child: Icon(
-                Icons.tune,
-              ),
-            ),
-          ),
-        ],
       ),
       body: Center(
         child: Column(
