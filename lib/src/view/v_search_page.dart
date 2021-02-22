@@ -8,6 +8,7 @@ import 'package:restaurant_search_app_v1/src/model/mod_restaurant.dart';
 
 import 'package:restaurant_search_app_v1/src/view/v_search_form.dart';
 import 'package:restaurant_search_app_v1/src/view/wid_restaurant_item.dart';
+import 'package:restaurant_search_app_v1/src/view/wid_side_drawer.dart';
 import 'package:restaurant_search_app_v1/style.dart';
 
 class SearchPage extends StatefulWidget {
@@ -37,6 +38,7 @@ class _SearchPageState extends State<SearchPage> {
         ),
         backgroundColor: color_tart_orange,
       ),
+      endDrawer: SideDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -96,5 +98,73 @@ class _SearchPageState extends State<SearchPage> {
         ),
       ),
     );
+
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     backgroundColor: Colors.red,
+    //     title: Text(widget.title),
+    //   ),
+    //   body: Expanded(
+    //     child: Center(
+    //       child: Column(
+    //         mainAxisAlignment: MainAxisAlignment.start,
+    //         children: <Widget>[
+    //           SearchForm(
+    //             onSearch: (q) {
+    //               setState(() {
+    //                 query = q;
+    //               });
+    //             },
+    //           ),
+    //           query == null
+    //               ? Expanded(
+    //                   child: Column(
+    //                     mainAxisAlignment: MainAxisAlignment.center,
+    //                     children: [
+    //                       Icon(
+    //                         Icons.search,
+    //                         color: Colors.black12,
+    //                         size: 110,
+    //                       ),
+    //                       Text(
+    //                         'No Results to display',
+    //                         style: TextStyle(
+    //                           color: Colors.black12,
+    //                           fontSize: 20,
+    //                           fontWeight: FontWeight.bold,
+    //                         ),
+    //                       )
+    //                     ],
+    //                   ),
+    //                 )
+    //               : FutureBuilder(
+    //                   future: api.searchRestaurants(query),
+    //                   builder: (context, snapshot) {
+    //                     if (snapshot.connectionState ==
+    //                         ConnectionState.waiting) {
+    //                       return Center(
+    //                         child: CircularProgressIndicator(),
+    //                       );
+    //                     }
+    //                     if (snapshot.hasData) {
+    //                       return Expanded(
+    //                         child: ListView(
+    //                           children: snapshot.data
+    //                               .map<Widget>((json) =>
+    //                                   RestaurantItem(Restaurant(json)))
+    //                               .toList(),
+    //                         ),
+    //                       );
+    //                     }
+
+    //                     return Text(
+    //                         'Error retrieving results: ${snapshot.error}');
+    //                   },
+    //                 ),
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
   }
 }
